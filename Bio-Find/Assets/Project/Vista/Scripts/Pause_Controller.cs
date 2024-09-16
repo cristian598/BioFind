@@ -54,7 +54,7 @@ public class PauseController : MonoBehaviour
     {
         // Puedes cargar la escena principal o salir del juego
         // Si estás usando una escena principal para el menú
-        //SceneManager.LoadScene("MainMenuScene"); // Asegúrate de que "MainMenuScene" sea el nombre correcto
+        SceneManager.LoadScene("SampleScene"); // Asegúrate de que "MainMenuScene" sea el nombre correcto
         // Para salir del juego (solo funciona en builds)
         // Application.Quit();
     }
