@@ -15,10 +15,6 @@ public class DialogueScript : MonoBehaviour
 
     int index, enumerado;
 
-    void Start()
-    {
-        StartDialogue();
-    }
     void Update()
     {
       if (Input.GetKeyDown(KeyCode.E))
@@ -40,6 +36,14 @@ public class DialogueScript : MonoBehaviour
 
         StartCoroutine(WriteLine());
     }
+
+    public void StartDialogueSec()
+    {
+       index = 1;
+
+        StartCoroutine(WriteLine());
+    }
+    
 
     IEnumerator WriteLine()
     {
@@ -64,4 +68,6 @@ public class DialogueScript : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    
 }

@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class ControladorSubtitulosAudios : MonoBehaviour
 {
-    public GameObject CanvaInicial,CanvaSubtitulo, CanvaPausa;
+    public GameObject CanvaDemostracion,CanvaInicial,CanvaSubtitulo, CanvaPausa;
     public AudioSource As;
     public AudioClip Inicial, Segundo, Tercero;
     public DialogueScript dialogueScript;
 
     void Awake()
     {
+        CanvaDemostracion.SetActive(true);
+    }
+
+    public void ActivarInicial()
+    {
+        CanvaDemostracion.SetActive(false);
+        dialogueScript.StartDialogue();
         As.clip = Inicial;
         As.Play();
         CanvaInicial.SetActive(true);
     }
-
     public void ApagarInicial()
     {
         CanvaInicial.SetActive(false);
@@ -33,6 +39,7 @@ public class ControladorSubtitulosAudios : MonoBehaviour
     public void SegundoAudio()
     {
         As.Stop();
+        CanvaDemostracion.SetActive(false);
         CanvaInicial.SetActive(false);
         As.clip=Segundo;
         As.Play();
