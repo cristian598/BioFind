@@ -9,13 +9,29 @@ public class DialogueScript : MonoBehaviour
 
     public string[] lines;
 
+    public AudioSource As;
+    public AudioClip[] audios;
     public float textSpeed=0.1f;
 
-    int index;
+    int index, enumerado;
 
+    void Start()
+    {
+        StartDialogue();
+    }
     void Update()
     {
-       
+      if (Input.GetKeyDown(KeyCode.E))
+        {
+            NextLine();
+
+            if (enumerado < audios.Length)
+            {
+                As.clip = audios[enumerado];
+                As.Play();
+                enumerado++;
+            }
+        }
     }
 
     public void StartDialogue()
